@@ -1,7 +1,8 @@
 ARG BASE_CONTAINER=jupyter/scipy-notebook
 FROM $BASE_CONTAINER
 
-USER root
+USER $NB_UID
+
 RUN pip install \
  pandas \
  numpy \
@@ -27,3 +28,6 @@ RUN pip install \
  holoviews \
  spacy \
  gensim	
+
+ADD ./nbreader.py /tmp/nbreader.py
+RUN python /tmp/nbreader.py
