@@ -29,5 +29,4 @@ RUN pip install \
  spacy \
  gensim	
 
-ADD ./nbreader.py /tmp/nbreader.py
-RUN python /tmp/nbreader.py
+ADD ./nbreader.js /home/jovyan/.local/share/jupyter/nbextensions/nbreader.js
